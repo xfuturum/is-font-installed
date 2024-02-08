@@ -14,8 +14,9 @@
     "sourceRoot": "/",
     "strict": true
   },
-  "include": ["./**/*.ts"],
+  "include": ["./src/**/*.ts"],
   "exclude": [
-    "node_modules/**/*"
+    "node_modules/**/*",
+    "./src/**/*.test.ts"
   ]
 }
