@@ -15,6 +15,9 @@
     "font",
     "fonts"
   ],
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "author": "Alexander Mikhalchenko",
   "license": "ISC",
   "bugs": {
