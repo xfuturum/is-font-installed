@@ -2,11 +2,16 @@
   "name": "is-font-installed",
   "version": "1.0.0",
   "description": "Check if a user has a font installed on their system",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "cy": "node_modules/.bin/cypress open",
     "test": "node_modules/.bin/cypress run -- --record --spec \"cypress/e2e/index.cy.ts\"",
-    "build": "tsc"
+    "build": "tsup"
   },
   "repository": {
     "type": "git",
@@ -32,7 +37,8 @@
     "babel-jest": "^29.7.0",
     "cypress": "^13.6.4",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "tsup": "^8.0.1"
   },
   "dependencies": {
     "typescript": "^5.3.3"
