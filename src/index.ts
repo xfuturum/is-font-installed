@@ -25,11 +25,11 @@ const isFontInstalledBase = (dummyText: string) => (fontFamily: string) => {
   )
 };
 
-export const isFontInstalledEnglish = isFontInstalledBase('Thequickbrownfoxjumps');
+const isFontInstalled = isFontInstalledBase('Thequickbrownfoxjumps');
 
 // the text samples should NOT contain spaces when checking for non-ascii font faces
 // because otherwise spaces would be taken from the main font
 export const isFontInstalledCyrillic = isFontInstalledBase('Улукоморьядубзеленыйзлатаяцепьнадубетом');
 export const isFontInstalledExtLat = isFontInstalledBase('Poçžeśïtemñêspìñkú');
 
-export default isFontInstalledEnglish;
+export default isFontInstalled;

@@ -2,6 +2,8 @@
 
 This package lets you check if a user has a given font installed (as if it was not clear from the name). A very scientific approach of rendering a string with a given font and comparing its width to a fallback is used. We assume you have Arial and Comic Sans MS installed. 
 
+Install it with `npm i @xfuturum/is-font-installed` or `yarn add @xfuturum/is-font-installed`.
+
 
 How to use:
 
