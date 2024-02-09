@@ -1,4 +1,5 @@
 lib
 cypress/downloads
+cypress/screenshots
 node_modules
 .idea

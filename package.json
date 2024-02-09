@@ -4,6 +4,7 @@
   "description": "Check if a user has a font installed on their system",
   "main": "index.js",
   "scripts": {
+    "cy": "node_modules/.bin/cypress open",
     "test": "node_modules/.bin/cypress run -- --record --spec \"cypress/e2e/index.cy.ts\"",
     "build": "tsc"
   },

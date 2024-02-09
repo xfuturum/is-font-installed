@@ -1,9 +1,7 @@
 const baseFont1 = 'Arial';
 const baseFont2 = 'Comic Sans MS';
 
-type Dimensions = {width: number, height: number};
-
-const getTextDimensions = (fontFamily: string, dummyText: string): Dimensions => {
+const getTextWidth = (fontFamily: string, dummyText: string): number => {
   const span = document.createElement('span');
   span.style.visibility = 'hidden';
   span.style.pointerEvents = 'none';
@@ -13,23 +11,25 @@ const getTextDimensions = (fontFamily: string, dummyText: string): Dimensions =>
   span.innerHTML = dummyText;
   span.style.fontFamily = fontFamily;
   document.body.appendChild(span);
-  const { width, height} = span.getBoundingClientRect();
+  const {width} = span.getBoundingClientRect();
   document.body.removeChild(span)
-  return {width, height}
+  return width
 }
 
-const areSameDimensions = (d1: Dimensions, d2: Dimensions) => d1.width === d2.width && d1.height === d2.height;
 
 const isFontInstalledBase = (dummyText: string) => (fontFamily: string) => {
   // we need 2 baselines for when we are testing against, say, arial. Or in a rare scenario when our font matches the width of one of the baselines
   return !(
-    areSameDimensions(getTextDimensions(baseFont1, dummyText), getTextDimensions(fontFamily + ', ' + baseFont1, dummyText)) &&
-    areSameDimensions(getTextDimensions(baseFont2, dummyText), getTextDimensions(fontFamily + ', ' + baseFont2, dummyText))
+    getTextWidth(baseFont1, dummyText) === getTextWidth(fontFamily + ', ' + baseFont1, dummyText) &&
+    getTextWidth(baseFont2, dummyText) === getTextWidth(fontFamily + ', ' + baseFont2, dummyText)
   )
 };
 
-export const isFontInstalledEnglish = isFontInstalledBase('Quick brown fox');
-export const isFontInstalledCyrillic = isFontInstalledBase('У лукоморья дуб зеленый');
-export const isFontInstalledExtLat = isFontInstalledBase('Poçžeśïte mñê spìñkú');
+export const isFontInstalledEnglish = isFontInstalledBase('Thequickbrownfoxjumps');
+
+// the text samples should NOT contain spaces when checking for non-ascii font faces
+// because otherwise spaces would be taken from the main font
+export const isFontInstalledCyrillic = isFontInstalledBase('Улукоморьядубзеленыйзлатаяцепьнадубетом');
+export const isFontInstalledExtLat = isFontInstalledBase('Poçžeśïtemñêspìñkú');
 
 export default isFontInstalledEnglish;
