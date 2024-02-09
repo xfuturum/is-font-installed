@@ -10,9 +10,8 @@
     "baseUrl": "./",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "sourceMap": true,
-    "sourceRoot": "/",
-    "strict": true
+    "sourceMap": false,
+    "sourceRoot": "/"
   },
   "include": ["./src/**/*.ts"],
   "exclude": [
