@@ -11,6 +11,7 @@
   "scripts": {
     "cy": "cypress open",
     "test": "cypress run -- --record --spec \"cypress/e2e/index.cy.ts\"",
+    "ts-check": "tsc --noEmit",
     "build": "tsup"
   },
   "repository": {

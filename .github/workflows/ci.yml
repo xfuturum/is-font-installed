@@ -24,7 +24,9 @@ jobs:
           node-version: 20.x
       - name: Install packages
         run: npm install
-      - name: Test
-        run: npm test
+      - name: Check TS
+        run: npm tun ts-check
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
       - name: Headpat yourself ^_^
         run: echo "Great job <3"
