@@ -25,7 +25,7 @@ jobs:
       - name: Install packages
         run: npm install
       - name: Check TS
-        run: npm tun ts-check
+        run: npm run ts-check
       - name: Cypress run
         uses: cypress-io/github-action@v6
       - name: Headpat yourself ^_^
