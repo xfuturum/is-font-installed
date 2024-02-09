@@ -6,7 +6,7 @@ describe('tests', () => {
     cy.visit('test/index.html')
   })
 
-  it('test extending AUTWindow', () => {
+  it('test basic fonts', () => {
     assert.equal(isFontInstalled('adcasdcasdcasdc'), false);
     assert.equal(isFontInstalled('Arial'), true);
     assert.equal(isFontInstalled('Comic Sans MS'), true);

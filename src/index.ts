@@ -5,16 +5,16 @@ type Dimensions = {width: number, height: number};
 
 const getTextDimensions = (fontFamily: string, dummyText: string): Dimensions => {
   const span = document.createElement('span');
-  // span.style.visibility = 'hidden';
-  // span.style.pointerEvents = 'none';
+  span.style.visibility = 'hidden';
+  span.style.pointerEvents = 'none';
   span.style.position = 'absolute';
   span.style.whiteSpace = 'nowrap';
-  // span.style.opacity = '0';
+  span.style.opacity = '0';
   span.innerHTML = dummyText;
   span.style.fontFamily = fontFamily;
   document.body.appendChild(span);
   const { width, height} = span.getBoundingClientRect();
-  // document.body.removeChild(span)
+  document.body.removeChild(span)
   return {width, height}
 }
 
