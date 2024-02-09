@@ -11,7 +11,6 @@
   "scripts": {
     "cy": "cypress open",
     "test": "cypress run -- --record --spec \"cypress/e2e/index.cy.ts\"",
-    "publish": "npm run build && npm publish --access public",
     "build": "tsup"
   },
   "repository": {
