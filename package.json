@@ -1,5 +1,5 @@
 {
-  "name": "is-font-installed",
+  "name": "@xfuturum/is-font-installed",
   "version": "1.0.0",
   "description": "Check if a user has a font installed on their system",
   "main": "./dist/index.js",
