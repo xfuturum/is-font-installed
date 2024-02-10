@@ -1,6 +1,6 @@
 {
   "name": "@xfuturum/is-font-installed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Check if a user has a font installed on their system",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
